@@ -140,3 +140,4 @@ alias gs="git status"
 #     zinit-zsh/z-a-bin-gem-node
 
 ### End of Zinit's installer chunk
+source ~/path/to/fsh/fast-syntax-highlighting.plugin.zsh
