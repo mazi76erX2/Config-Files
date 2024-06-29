@@ -1,0 +1,13 @@
+Host AWS-Server
+  HostName .af-south-1.compute.amazonaws.com
+  IdentityFile ~/.ssh/AWS_key.pem
+  User ubuntu
+
+Host DigitalOcean-Server
+  HostName 207.154.241.192
+  IdentityFile ~/.ssh/id_ed25519
+  User root
+
+Host github.com
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_ed25519
