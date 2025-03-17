@@ -4,7 +4,7 @@ Host AWS-Server
   User ubuntu
 
 Host DigitalOcean-Server
-  HostName 207.154.241.192
+  HostName 157.230.27.16
   IdentityFile ~/.ssh/id_ed25519
   User root
 
