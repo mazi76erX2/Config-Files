@@ -73,7 +73,7 @@ ZSH_THEME="agnoster"
 plugins=(
     git zsh-autosuggestions zsh-syntax-highlighting autopep8 docker docker-compose 
     doctl dotenv emoji github history httpie pep8 pip postgres python npm nvm 
-    ubuntu heroku react-native systemd vscode sudo aws azure gcloud 
+    ubuntu heroku react-native systemd vscode sudo aws azure gcloud poetry
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -112,6 +112,12 @@ alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
 alias python="python3"
 alias gs="git status"
+alias pip="pip3"
+alias ddelte="docker system prune -a --volumes"
+alias dstop="docker stop $(docker ps -a -q)"
+alias dremove="docker rm $(docker ps -a -q)"
+alias dimages="docker rmi $(docker images -q)"
+alias dcontiners="docker rm -vf $(docker ps -aq)"
 
 
 # export NVM_DIR="/home/xolani/.nvm"
