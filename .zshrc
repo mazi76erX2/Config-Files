@@ -113,11 +113,24 @@ alias ohmyzsh="code ~/.oh-my-zsh"
 alias python="python3"
 alias gs="git status"
 alias pip="pip3"
-alias ddelte="docker system prune -a --volumes"
-alias dstop="docker stop $(docker ps -a -q)"
-alias dremove="docker rm $(docker ps -a -q)"
-alias dimages="docker rmi $(docker images -q)"
-alias dcontiners="docker rm -vf $(docker ps -aq)"
+
+# Check if the Docker daemon is running before defining Docker aliases
+# We use 'docker info > /dev/null 2>&1' which attempts to connect to the daemon.
+# If it succeeds (exit code 0), the daemon is running.
+# '> /dev/null 2>&1' suppresses any output (both stdout and stderr).
+
+if docker info > /dev/null 2>&1; then
+  # Docker daemon is running, define the aliases
+  alias ddelte='docker system prune -a --volumes'
+  alias dstop='docker stop $(docker ps -a -q)'
+  alias dremove='docker rm $(docker ps -a -q)'
+  alias dimages='docker rmi $(docker images -q)'
+  alias dcontiners='docker rm -vf $(docker ps -aq)' # Note: 'dcontiners' seems like a typo, maybe 'dcontainers'?
+
+  # Optional: You could add an echo statement here if you want feedback when they load
+  # echo "Docker aliases loaded."
+
+fi
 
 
 # export NVM_DIR="/home/xolani/.nvm"
